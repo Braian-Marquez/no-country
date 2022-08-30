@@ -13,7 +13,6 @@ import java.util.List;
 public class GamersDTO {
     private Long id;
     @Email(message = "Username must be an email" )
-    @Column(unique = true)
     private String username;
     @Size(min = 8)
     private String password;
