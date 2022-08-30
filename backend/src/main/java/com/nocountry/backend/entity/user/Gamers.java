@@ -29,6 +29,7 @@ public class Gamers implements UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Email
+    @Column(unique = true)
     private String username;
     @Size(min =8)
     private String password;
