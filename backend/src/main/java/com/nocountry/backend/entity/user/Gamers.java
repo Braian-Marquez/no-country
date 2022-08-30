@@ -2,9 +2,10 @@ package com.nocountry.backend.entity.user;
 
 
 
+
+
 import com.nocountry.backend.entity.GamesList;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,6 +16,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -41,16 +43,16 @@ public class Gamers implements UserDetails {
     private boolean enabled;
 
     @ElementCollection(targetClass=Long.class)
-    private List<Long> recordSudoku;
+    private List<Long> recordSudoku=new ArrayList<>(5);
 
     @ElementCollection(targetClass=Long.class)
-    private List<Long>  recordWordle;
+    private List<Long>  recordWordle=new ArrayList<>(5);;
 
     @ElementCollection(targetClass=Long.class)
-    private List<Long>  recordMemories;
+    private List<Long>  recordMemories=new ArrayList<>(5);;
 
     @ElementCollection(targetClass=Long.class)
-    private List<Long>  recordBuscaMinas;
+    private List<Long>  recordBuscaMinas=new ArrayList<>(5);;
 
     private Long averageSudoku;
 
